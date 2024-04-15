@@ -27,6 +27,7 @@ public class AllureTests {
     @Severity(SeverityLevel.BLOCKER)
     @Link(value = "Testing", url = "https://testing.github.com")
     @DisplayName("Создание Issue для авторизованного пользователя")
+
     public void testStaticLabels() {
     }
 
@@ -49,9 +50,13 @@ public class AllureTests {
 
         open("https://github.com");
 
-        $(".header-search-input").click();
-        $(".header-search-input").sendKeys("eroshenkoam/allure-example");
-        $(".header-search-input").submit();
+//        $(".header-search-input").click();
+//        $(".header-search-input").sendKeys("eroshenkoam/allure-example");
+//        $(".header-search-input").submit();
+
+        $(".header-search-button").click();
+        $("#query-builder-test").sendKeys("eroshenkoam/allure-example");
+        $("#query-builder-test").submit();
 
         $(linkText("eroshenkoam/allure-example")).click();
         $("#issues-tab").click();
@@ -95,6 +100,7 @@ public class AllureTests {
         steps.shouldSeeIssueWithNumber(ISSUE);
 
     }
+
     @Test
     public void testLambdaAttachments() {
         SelenideLogger.addListener("allure", new AllureSelenide());
