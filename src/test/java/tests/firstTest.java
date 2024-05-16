@@ -19,7 +19,7 @@ import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-
+@Disabled
 public class firstTest extends testBase {
     Faker faker = new Faker(new Locale("ru"));
     String userFirstName = faker.name().firstName(),

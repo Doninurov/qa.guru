@@ -23,10 +23,7 @@ allure {
 repositories {
     mavenCentral()
 }
-
-
 dependencies {
-
     testImplementation "com.codeborne:selenide:7.2.2"
     testImplementation "org.junit.jupiter:junit-jupiter:5.10.2"
     testImplementation "com.github.javafaker:javafaker:1.0.2"
@@ -36,7 +33,7 @@ dependencies {
     testImplementation 'com.opencsv:opencsv:5.7.1'
     testImplementation 'com.google.code.gson:gson:2.10.1'
     testImplementation 'io.qameta.allure:allure-selenide:2.26.0'
-    testImplementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+    testImplementation "org.slf4j:slf4j-simple:1.7.32"
 }
 
 tasks.withType(JavaCompile).configureEach {
@@ -44,4 +41,9 @@ tasks.withType(JavaCompile).configureEach {
 }
 test {
     useJUnitPlatform()
+}
+task smoke_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags("simple")
+    }
 }
