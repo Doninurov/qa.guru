@@ -9,6 +9,7 @@ import tests.testBase;
 import java.util.Locale;
 
 import static com.codeborne.selenide.Selenide.open;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 public class copyFirstTest extends testBase {
@@ -23,7 +24,7 @@ public class copyFirstTest extends testBase {
     @Tag("Smoke")
     @Test
     void fillFormTest1() {
-        open("/automation-practice-form");
+        open("https://demoqa.com/automation-practice-form");
 
         registrationPage.setName(userFirstName)
                 .setLastName(userLastName)
@@ -37,6 +38,15 @@ public class copyFirstTest extends testBase {
                 .setDateOnCalendar1("001", "June", "1994")
                 .setState("NCR", "NCR")
                 .checkForResultWindow();
+    }
+    @Test
+    void test1() {
+        assertTrue(true);
+    }
+    @Test
+    @Tag("smoke")
+    void test2() {
+        assertTrue(true);
     }
 
 }
