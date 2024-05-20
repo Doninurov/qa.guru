@@ -44,7 +44,7 @@ public class copyFirstTest extends testBase {
         assertTrue(true);
     }
     @Test
-    @Tag("smoke")
+    @Tag("Smoke")
     void test2() {
         assertTrue(true);
     }
