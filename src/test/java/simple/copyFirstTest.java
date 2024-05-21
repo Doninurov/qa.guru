@@ -9,6 +9,7 @@ import tests.testBase;
 import java.util.Locale;
 
 import static com.codeborne.selenide.Selenide.open;
+import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Tag("Smoke")
@@ -25,8 +26,10 @@ public class copyFirstTest extends testBase {
 //    @Disabled
     @Test
     void fillFormTest1() {
-        open("https://demoqa.com/automation-practice-form");
-
+        step("Open registrations form", () -> {
+            open("https://demoqa.com/automation-practice-form");
+        });
+        step("Filling form", () -> {
         registrationPage.setName(userFirstName)
                 .setLastName(userLastName)
                 .setEmail(userEmail)
@@ -37,8 +40,11 @@ public class copyFirstTest extends testBase {
                 .uploadPicture("112333.png")
                 .setAdress("Some address 1")
                 .setDateOnCalendar1("001", "June", "1994")
-                .setState("NCR", "NCR")
-                .checkForResultWindow();
+                .setState("NCR", "NCR");
+        });
+        step("Verify form", () -> {
+        registrationPage.checkForResultWindow();
+        });
     }
     @Test
     void test1() {
