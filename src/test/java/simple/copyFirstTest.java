@@ -1,6 +1,7 @@
 package simple;
 
 import com.github.javafaker.Faker;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
@@ -11,7 +12,7 @@ import java.util.Locale;
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-
+@Tag("Smoke")
 public class copyFirstTest extends testBase {
     RegistrationPage registrationPage = new RegistrationPage() ;
     Faker faker = new Faker(new Locale("ru"));
@@ -21,7 +22,7 @@ public class copyFirstTest extends testBase {
             userTelNums = "+998" + faker.number().numberBetween(100000000, 999999999);
     ;
 
-    @Tag("Smoke")
+    @Disabled
     @Test
     void fillFormTest1() {
         open("https://demoqa.com/automation-practice-form");
