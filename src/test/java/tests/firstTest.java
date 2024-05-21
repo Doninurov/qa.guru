@@ -19,7 +19,7 @@ import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-@Disabled
+//@Disabled
 public class firstTest extends testBase {
     Faker faker = new Faker(new Locale("ru"));
     String userFirstName = faker.name().firstName(),
@@ -44,7 +44,7 @@ public class firstTest extends testBase {
         $("#output").shouldHave(text("Alex Egorov"), text("alex@egorov.com"), text("Some address 1"), text("Another address 1"));
     }
 
-    @Disabled
+//    @Disabled
     @Test
     void fillFormTest1() {
         open("/automation-practice-form");
