@@ -39,11 +39,25 @@ dependencies {
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
+
+// Запускаем все тесты
 test {
     useJUnitPlatform()
 }
+// Запускаем все тесты по тэгу "Smoke"
 task smoke_tests(type: Test) {
     useJUnitPlatform {
         includeTags("Smoke")
     }
 }
+
+task many_properties_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("many_properties")
+    }
+}
+
+
+
+
+

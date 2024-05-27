@@ -32,6 +32,7 @@ public class testBase {
 
     }
 
+    // Добавляем отображение каждого шага в алюре
     @BeforeEach
     void addListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
