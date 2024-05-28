@@ -1,7 +1,6 @@
 package simple;
 
 import com.github.javafaker.Faker;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
@@ -24,7 +23,6 @@ public class copyFirstTest extends testBase {
 //            userTelNums = "+998" + faker.number().numberBetween(100000000, 999999999);
     ;
 
-    @Disabled
     @Test
     void fillFormTest1() {
         step("Open registrations form", () -> {
@@ -47,15 +45,39 @@ public class copyFirstTest extends testBase {
         registrationPage.checkForResultWindow();
         });
     }
-    @Tag("Smoke")
+
     @Test
     void test1() {
         assertTrue(true);
     }
-    @Tag("Smoke")
+
     @Test
     void test2() {
         assertTrue(true);
+    }
+    @Tag("Smoke")
+    @Test
+    void fillFormTest2() {
+        step("Open registrations form", () -> {
+            String browserName = System.getProperty("url");
+            open(browserName);
+        });
+        step("Filling form", () -> {
+            registrationPage.setName(userFirstName)
+                    .setLastName(userLastName)
+                    .setEmail(userEmail)
+                    .setGender("Male")
+                    .setNumber(userTelNums)
+                    .setSubject("Math")
+                    .setHobbies("Reading")
+                    .uploadPicture("112333.png")
+                    .setAdress("Some address 1")
+                    .setDateOnCalendar1("001", "June", "1994")
+                    .setState("NCR", "NCR");
+        });
+        step("Verify form", () -> {
+            registrationPage.checkForResultWindow();
+        });
     }
 
 }
