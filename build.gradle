@@ -8,13 +8,13 @@ version '1.0-SNAPSHOT'
 
 allure {
     report {
-        version.set("2.19.0")
+        version.set("2.21.0")
     }
     adapter { // отвечает за появление папочки build/allure-results
         aspectjWeaver.set(true) //обработка аннотации @Step
         frameworks {
             junit5 { //название фреймворка
-                adapterVersion.set("2.19.0") //версия интеграции фреймворка и Allure
+                adapterVersion.set("2.21.0") //версия интеграции фреймворка и Allure
             }
         }
     }
@@ -23,18 +23,22 @@ allure {
 repositories {
     mavenCentral()
 }
+
 dependencies {
     testImplementation "com.codeborne:selenide:7.2.2"
     testImplementation "org.junit.jupiter:junit-jupiter:5.10.2"
     testImplementation "com.github.javafaker:javafaker:1.0.2"
     testImplementation "com.codeborne:pdf-test:1.5.0"
     testImplementation "org.testng:testng:7.1.0"
-    testImplementation 'com.codeborne:xls-test:1.4.3'
+    testImplementation "com.codeborne:xls-test:1.4.3"
     testImplementation 'com.opencsv:opencsv:5.7.1'
-    testImplementation 'com.google.code.gson:gson:2.10.1'
-    testImplementation 'io.qameta.allure:allure-selenide:2.26.0'
-    testImplementation "org.slf4j:slf4j-simple:1.7.32"
+    testImplementation "com.google.code.gson:gson:2.10.1"
+    testImplementation "io.qameta.allure:allure-selenide:2.21.0"
+//    testImplementation "io.qameta.allure:allure-selenide:2.26.0"
+//    implementation "org.slf4j:slf4j-simple:1.7.32"
+    implementation 'org.slf4j:slf4j-simple:2.0.0-alpha5'
 }
+
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
@@ -51,9 +55,9 @@ task smoke_tests(type: Test) {
     }
 }
 
-task many_properties_test(type: Test) {
+task test_test(type: Test) {
     useJUnitPlatform {
-        includeTags("many_properties")
+        includeTags("one_property")
     }
 }
 

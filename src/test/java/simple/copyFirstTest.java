@@ -1,6 +1,7 @@
 package simple;
 
 import com.github.javafaker.Faker;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
@@ -12,7 +13,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@Tag("Smoke")
+
 public class copyFirstTest extends testBase {
     RegistrationPage registrationPage = new RegistrationPage() ;
     Faker faker = new Faker(new Locale("en"));
@@ -23,7 +24,7 @@ public class copyFirstTest extends testBase {
 //            userTelNums = "+998" + faker.number().numberBetween(100000000, 999999999);
     ;
 
-//    @Disabled
+    @Disabled
     @Test
     void fillFormTest1() {
         step("Open registrations form", () -> {
@@ -46,10 +47,12 @@ public class copyFirstTest extends testBase {
         registrationPage.checkForResultWindow();
         });
     }
+    @Tag("Smoke")
     @Test
     void test1() {
         assertTrue(true);
     }
+    @Tag("Smoke")
     @Test
     void test2() {
         assertTrue(true);
