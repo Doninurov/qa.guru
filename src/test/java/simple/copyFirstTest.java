@@ -59,8 +59,7 @@ public class copyFirstTest extends testBase {
     @Test
     void fillFormTest2() {
         step("Open registrations form", () -> {
-            String siteUrl = System.getProperty("url");
-            open(siteUrl);
+            open(System.getProperty("url")); // урл передается через дженкинс
         });
         step("Filling form", () -> {
             registrationPage.setName(userFirstName)
