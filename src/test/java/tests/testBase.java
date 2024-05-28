@@ -17,7 +17,8 @@ public class testBase {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.browser = "chrome";
+        String browserName = System.getProperty("browser");
+        Configuration.browser = browserName;
         Configuration.browserVersion = "100";
         Configuration.browserSize = "1920x1080";
 //        Configuration.baseUrl = "https://demoqa.com";

@@ -59,8 +59,8 @@ public class copyFirstTest extends testBase {
     @Test
     void fillFormTest2() {
         step("Open registrations form", () -> {
-            String browserName = System.getProperty("url");
-            open(browserName);
+            String siteUrl = System.getProperty("url");
+            open(siteUrl);
         });
         step("Filling form", () -> {
             registrationPage.setName(userFirstName)
