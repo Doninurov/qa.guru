@@ -25,17 +25,18 @@ repositories {
 }
 
 dependencies {
-    testImplementation "org.aspectj:aspectjweaver:1.9.19"
+//    testImplementation "org.aspectj:aspectjweaver:1.9.19"
+    testImplementation "org.aspectj:aspectjweaver:1.9.22.1"
     testImplementation "com.codeborne:selenide:7.2.2"
     testImplementation "org.junit.jupiter:junit-jupiter:5.10.2"
     testImplementation "com.github.javafaker:javafaker:1.0.2"
     testImplementation "com.codeborne:pdf-test:1.5.0"
-    testImplementation "org.testng:testng:7.1.0"
+    testImplementation "org.testng:testng:7.7.1"
     testImplementation "com.codeborne:xls-test:1.4.3"
     testImplementation 'com.opencsv:opencsv:5.7.1'
     testImplementation "com.google.code.gson:gson:2.10.1"
     testImplementation "io.qameta.allure:allure-selenide:2.21.0"
-    implementation 'org.slf4j:slf4j-simple:2.0.0-alpha5'
+    implementation 'org.slf4j:slf4j-simple:2.0.7'
 }
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
